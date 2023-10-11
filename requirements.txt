@@ -1,0 +1,12 @@
+numpy
+pandas
+plotly
+streamlit
+openai
+python-dotenv
+SQLAlchemy
+snowflake-sqlalchemy
+pyarrow==10.0.1
+scikit-learn
+pmdarima
+matplotlib
