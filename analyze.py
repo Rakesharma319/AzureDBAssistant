@@ -16,7 +16,7 @@ import time
 import sqlite3
 
 def get_table_schema():
-	conn = sqlite3.connect('chinook.db')
+	conn = sqlite3.connect('TechItOut2DB.db')
 	c = conn.cursor()
 
 	def sq(str,con=conn):
@@ -147,7 +147,7 @@ class SQL_Query():
             {data_sources}
             {system_message}
             """
-    conn = sqlite3.connect('chinook.db')
+    conn = sqlite3.connect('TechItOut2DB.db')
     
     def execute_sql_query(str,con=conn):
         return pd.read_sql('''{}'''.format(str), con)
@@ -217,7 +217,7 @@ class AnalyzeGPT(ChatGPT_Handler,SQL_Query):
 
         st.write(f"Question: {question}")
 
-        conn = sqlite3.connect('chinook.db')
+        conn = sqlite3.connect('TechItOut2DB.db')
     
         def execute_sql(str,con=conn):
             return pd.read_sql('''{}'''.format(str), con)
@@ -323,7 +323,7 @@ class AnalyzeGPT(ChatGPT_Handler,SQL_Query):
     def query_run(self, question: str, show_code, show_prompt, st) -> any:
         st.write(f"Question: {question}")
 
-        conn = sqlite3.connect('chinook.db')
+        conn = sqlite3.connect('TechItOut2DB.db')
     
         def execute_sql(str,con=conn):
             return pd.read_sql('''{}'''.format(str), con)
