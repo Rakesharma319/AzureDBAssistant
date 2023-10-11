@@ -45,11 +45,11 @@ def get_table_schema():
 			table_name = f"{table_name_single}"
 			column_name = row["name"]
 			data_type = row["type"]
-			# if " " in table_name:
-			# 	table_name = f"[{table_name}]"
-			# 	column_name = row["name"]
-			# if " " in column_name:
-			# 	column_name = f"[{name}]"
+			if " " in table_name:
+				table_name = f"[{table_name}]"
+				column_name = row["name"]
+			if " " in column_name:
+				column_name = row["name"]
 
 			# If the table name has changed, output the previous table's information
 			if current_table != table_name and current_table != "":
